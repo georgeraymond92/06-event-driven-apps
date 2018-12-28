@@ -1,42 +1,34 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB
 =================================================
 
-## Project Name
+## event driven apps
 
-### Author: Student/Group Name
+### Author: George Raymond
 
 ### Links and Resources
-* [repo](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com)
-* [front-end](http://xyz.com)
+* [repo](https://github.com/georgeraymond92/06-event-driven-apps)
+* [travis](https://www.travis-ci.com/georgeraymond92/06-event-driven-apps)
+
 
 ### Modules
-#### `modulename.js`
+#### `app.js`
+#### `emits.js`
+#### `events.js`
 ##### Exported Values and Methods
 
-###### `foo(thing) -> string`
-Usage Notes or examples
+###### `alterFile(file) -> string`
+takes one argument a file name and converts all of its contents to upper case
 
-###### `bar(array) -> array`
-Usage Notes or examples
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `PORT` - Defined in ENV
+
 
 #### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+* `node app.js filetoalter`
+
 
 #### Tests
 * How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
-
-#### UML
-Link to an image of the UML for your application and response to events
+npm test
