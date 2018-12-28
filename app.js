@@ -10,11 +10,12 @@ const readFile = util.promisify(fs.readFile);
 const alterFile = (file) => {
   readFile(file)
   .then(data => {
-    event.emit('saved');
+    
     let text = data.toString().toUpperCase();
 
     fs.writeFile( file, text, (err, data) => {
       if(err) { throw err; }
+      event.emit('saved');
       console.log(`${file} saved`);
     })
   }).catch(err => {
@@ -25,3 +26,5 @@ const alterFile = (file) => {
 let file = process.argv.slice(2).shift();
 
 alterFile(file);
+
+module.exports = {alterFile, readFile};
