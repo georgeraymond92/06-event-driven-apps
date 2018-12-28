@@ -15,10 +15,19 @@ describe('testing the event emitter app' , () => {
         expect(spy).toHaveBeenCalled();
         spy.mockRestore();
     });
-    // test('checking writeFile function', () => {
-    //     const spy = jest.spyOn(app, '');
-    //     const emit = app.then();
-    //     expect(spy).toHaveBeenCalled();
-    // });
+    test('checking writeFile triggered a console log', () => {
+        const spy = jest.spyOn(app, 'alterFile');
+        const consoleObj = jest.spyOn(console, "log");
+        const emit = app.alterFile();
+        consoleObj();
+        expect(consoleObj).toHaveBeenCalled();
+    });
+    test('does the readFile function log things to the console', () => {
+        const spy = jest.spyOn(app, 'readFile');
+        const consoleObj = jest.spyOn(console, "log");
+        const emit = app.readFile();
+        consoleObj();
+        expect(consoleObj).toHaveBeenCalled();
+    })
 
 })
